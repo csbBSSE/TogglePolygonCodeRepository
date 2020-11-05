@@ -25,63 +25,6 @@ F3(end+1:maxlen) = "0";
 %%-------------------------------------------------------------------------
 %% Making the Categories --------------------------------------------------
 
-% v = [1 1 1 2 2 2 3 3 3 4 4 4 5 5 5 6 6 6 7 7 7 8 8 8];
-% C = nchoosek(v,3);
-% dlmwrite('data.txt',C,'delimiter','');
-% C = dlmread('data.txt');
-% delete data.txt;
-% C = unique(C);
-% c = size(C);
-
-%v1 = 2^components_num ;
-% Souvadra is commenting the bottom block
-% v2 = 1:v1 ;
-% v = zeros(1,1);
-% 
-% for i = 1:v2(1,v1)
-% 
-%     v3 = repmat(i,sol_num,1);
-%     v = horzcat(v,v3');
-% 
-% end
-% 
-% v(:,1) = [] ;
-% 
-% C = nchoosek(v,sol_num);
-% C = unique(C,'rows');
-
-% % Souvadra's addition 
-% C = [];
-% if sol_num > 3
-%     fprintf("Need to write more code!!\n")
-% end
-% if sol_num == 3
-% for iii=(1:v1)
-%     for jjj=(1:v1)
-%         for kkk=(1:v1)
-%             C = [C; iii, jjj, kkk];
-%         end
-%     end
-% end
-% end
-% if sol_num == 2
-% for iii=(1:v1)
-%     for jjj=(1:v1)
-%         C = [C; iii, jjj];
-%     end
-% end 
-% end
-% if sol_num == 1
-% for iii=(1:v1)
-%     C = [C; iii];
-% end
-% end
-% dlmwrite('data.txt',C,'delimiter','');
-% C = dlmread('data.txt');
-% delete data.txt;
-% C = unique(C); % Additional Step by me
-% c = size(C);
-
 C = unique([F1;F2;F3]);
 C = double(C);
 c = size(C);

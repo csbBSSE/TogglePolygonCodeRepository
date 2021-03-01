@@ -2,7 +2,7 @@
 
 # Instruction to the end-user to replicate the results
 
-## Step 1: RACIPE Simulations (Three independent replicates for each network)
+## RACIPE Simulations (Three independent replicates for each network)
 
 Detailed instructions about RACIPE is given [here:](https://www.google.com "RACIPE Code Repo")
 
@@ -29,6 +29,8 @@ inputs:
 
 Example: `GK_normalization("path_to_RACIPE_simulations/4c/2",4,0)`
 
+***
+
 **Stability State Counting** 
 filenames: `MakeStabilityStateCounter.m, stabilityStateCounter.m` <-- For default RACIPE files, which performs calculations till "deca-stable" solutions. 
    `universal_stability_state_counter.m, stateCounter.m` <-- for more complex RACIPE simulations file, where we specify to calculate beyond "deca-stable solutions"
@@ -36,17 +38,44 @@ filenames: `MakeStabilityStateCounter.m, stabilityStateCounter.m` <-- For defaul
 This set of codes basically reads the RACIPE solutions files (of the triplicates for a particular network) and calculates what percentage of the total number of solutions belong to mono-stable, bi-stable, tri-stable and "higher-stable" solutions. This stores this data, in the form of a .fig and .xls file, which can be later used to plot the data. 
    The data contains, the mean of the frequency of the each solution states, found in each of the triplicates and the standard deviation is calculated for the error-bar. 
 
-_MainFiles:_
+_Main Files:_
+
 _For default RACIPE solutions:_ i.e. `-num_stability 10` --> `MakeStabilityStateCounter.m `
+
 inputs: 
 1. `path`: path of the directory of the network, where all the triplicates of the RACIPE simulations results are kept. 
 2. `Name`: `<Name>_stability_state_counter`will be the name of the .fig and .xls file, which will be generated as the output of this code. 
 
 Example: `MakeStabilityStateCounter('path_to_RACIPE_simulations/5cS','5cS')`
 
+---
 _For larger RACIPE solutions:_ e.g. `-num_stability 20` -->   `universal_stability_state_counter.m`
+
+inputs:
 1. `p1`: path of the first replicate of the RACIPE simulation of the concerned network 
 2. `p2`: path of the second replicate of the RACIPE simulation of the concerned network 
 3. `p3`: path of the third replicate of the RACIPE simulation of the concerned network 
 4. `name`: `<name>_stability_state_counts<30>` is the name of the .fig file it generates as output. [Note, this code does not generate a separate .xls file, although the .fig file can be used to extract the mean and standard deviation data using standard MATLAB functions]
+
+Example: `universal_stability_state_counter('path_to_longer_RACIPE_simulations/7cS/1','path_to_longer_RACIPE_simulations/7cS/2','path_to_longer_RACIPE_simulations/7cS/3','7cS')`
+
+***
+
+**Overall Frequency Calculationa**
+filename: `allSolutionCombiner.m`
+
+This function takes all the solution files of a RACIPE simulation, starting from the monostable solution to the highest-stable solution present in the directory, and merge those to form a combined solution files, which mimic that of a mono-stable solution file, but containes solution from all the stability states. The output of this file is a .dat file, which is printed in the same directory. Basically, this function makes a solutions file, which mimics that of a Boolean solution file, for the same network, for further downstream analysis. This output file(.dat) also requires G/K normalization for further analysis. 
+
+inputs:
+
+1. `path`: path where the RACIPE solution files i.e. `*_solution_?.dat` files are stored.
+2. `components_num`: Number of components in the network.
+3. `Name`: the name of the ouput .dat file. 
+
+example: `allSolutionFileCombiner('path_to_RACIPE_simulations/9cS/2/', 9, '9cS_combined')`
+
+---
+
+
+
 

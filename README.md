@@ -13,7 +13,7 @@ Additinal flags were used in special conditions, for those details, refer to "Me
 
 Once the triplicates of the RACIPE simulations are done, we use the following pipelines to analyze the data in different ways.
 
-**Important**: Keep all the triplicates of the RACIPE solutions for a same network in the same directory (preferebly, name the directory as the name of the network). For example Make a directory `/home/user1/4c` and keep the replicate one inside the the folder as `/home/user1/4c/1` and same for replicate two and three. 
+**Important**: Keep all the triplicates of the RACIPE solutions for a same network in the same directory (preferebly, name the directory as the name of the network). For example Make a directory `/home/user1/4c` and keep the replicate one inside the the folder `/home/user1/4c/1` and same for replicate two and three. 
 
 ## Boolean Simulations (Atchuta please fill this part...)
 

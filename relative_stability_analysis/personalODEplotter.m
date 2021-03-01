@@ -1,6 +1,6 @@
 % ODE Solver RACIPE solution files 
 
-path = '/Users/souvadrahati/Desktop/GIANT_RACIPE_simulations/TEN_SA/2';
+path = 'path_to_the_RACIPE_simulations/TEN_SA/2';
 components_num = 10;
 external_signal = 0;
 sol_num = 20;

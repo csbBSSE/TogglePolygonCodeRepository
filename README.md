@@ -137,6 +137,7 @@ example: `most_common_odd_bi_state_finder('path_to_RACIPE_simulations/9c/1/9c_so
 ---
 
 **JSD (Jensen-Shannon Divergence) Calculations**
+
 filename: `CombinedcsvGen.m`
 
 This function takes the frequency distribution of the combined results of the RACIPE and Boolean simulations and make a combined matrix that displays the predicted frequencies of each solution states as per RACIPE and Boolean simulations. This output matrix is saved as a .csv file, which we are going to use later for calculation of the JSD of those two distributions. 

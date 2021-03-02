@@ -244,7 +244,7 @@ The function `rel_stability_his_plotting.m` prints the percentage of the bistabl
 
 ## Figure 5: Odd numbered networks 
 
-`RACIPE --> allSolutionFileCombiner.m --> GK_normalization --> make_and_errorbar_conditions_apply --> Choose top 5/6 dominant states in Microsoft Excel and plot the bar-chart `
+`RACIPE --> allSolutionFileCombiner.m --> GK_normalization --> make_and_errorbar_conditions_apply --> Choose top (n*2) dominant states in Microsoft Excel and plot the bar-chart ` n = number of components in the circuit 
 
 `(RACIPE --> allSolutionFileCombiner.m --> GK_normalization --> make_and_errorbar_conditions_apply) + Boolean solution file --> CombinedcsvGen.m --> JSD-operation.ipynb --> JSD values `
 

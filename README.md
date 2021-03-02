@@ -13,7 +13,7 @@ Additinal flags were used in special conditions, for those details, refer to "Me
 
 Once the triplicates of the RACIPE simulations are done, we use the following pipelines to analyze the data in different ways.
 
-**Important**: Keep all the triplicates of the RACIPE solutions for a same network in the same directory (preferebly, name the directory as the name of the network). For example Make a directory `/home/user1/4c` and keep the replicate one inside the the folder `/home/user1/4c/1` and same for replicate two and three. 
+**Important**: Keep all the triplicates of the RACIPE solutions for a same network in the same directory (preferebly, name the directory as the name of the network). For example Make a directory `/home/user1/4c` and keep the replicate one inside the the folder as `/home/user1/4c/1` and same for replicate two and three. 
 
 ## Boolean Simulations (Atchuta please fill this part...)
 
@@ -166,10 +166,10 @@ _Note: This part of the code is not as straight forward as previous ones and req
 
 _Some Naming Conventions_: The naming conventions for the circuits used here are little different from that used in the manuscript and other places. 
 The general pattern is like: 
-7c <--> SEVEN 
-7cS <--> SEVEN_SA
-5c <--> FIVE 
-5cS <--> FIVE_SA
+- 7c <--> SEVEN 
+- 7cS <--> SEVEN_SA
+- 5c <--> FIVE 
+- 5cS <--> FIVE_SA
 ... 
 
 filename: `dynamic_simulation_<circuit name>.m`
@@ -218,3 +218,44 @@ This performs the plotting of the relative stability of the different monostable
 ---
 ---
 ## Pipelines used 
+
+
+# Figure 2: Even numbered networks 
+
+`RACIPE --> allSolutionFileCombiner.m --> GK_normalization --> make_and_errorbar_conditions_apply --> Choose top 5/6 dominant states in Microsoft Excel and plot the bar-chart `
+
+`(RACIPE --> allSolutionFileCombiner.m --> GK_normalization --> make_and_errorbar_conditions_apply) + Boolean solution file --> CombinedcsvGen.m --> JSD-operation.ipynb --> JSD values `
+
+
+# Figure 3: A and B
+
+`RACIPE --> GK_normalization --> MakeStabilityStateCounter.m --> Plot the data in Microsoft Excel and plot the bar-chart `
+
+# Figure 3: C
+
+`RACIPE --> allSolutionFileCombiner.m --> GK_normalization --> make_and_errorbar_conditions_apply --> Choose top 3 most dominant states in Microsoft Excel and plot the stacked bar-chart. `
+
+
+# Figure 4
+
+`RACIPE --> parameter and solution files ---> odecode_relative_stability_<circuit component number>.m --> rel_stability_hist_plotting.m` 
+
+The function `rel_stability_his_plotting.m` prints the percentage of the bistable solutions, which fall inside the [0,0.045)U(0.965,1.00] range (i.e. the effective monostable solutions). Those can be copy pasted inside an Excel Sheet and then used to plot the bar-chart of *Fig. 4-D* 
+
+# Figure 5: Odd numbered networks 
+
+`RACIPE --> allSolutionFileCombiner.m --> GK_normalization --> make_and_errorbar_conditions_apply --> Choose top 5/6 dominant states in Microsoft Excel and plot the bar-chart `
+
+`(RACIPE --> allSolutionFileCombiner.m --> GK_normalization --> make_and_errorbar_conditions_apply) + Boolean solution file --> CombinedcsvGen.m --> JSD-operation.ipynb --> JSD values `
+
+# Figure 6: A
+
+`RACIPE --> GK_normalization --> MakeStabilityStateCounter.m --> Plot the data in Microsoft Excel and plot the bar-chart `
+
+# Figure 6: B and C
+
+`RACIPE --> allSolutionFileCombiner.m --> GK_normalization --> most_common_odd_mono_stable_finder.m --> Open the .xls file in Microsoft Excel and plot it`
+
+`RACIPE --> allSolutionFileCombiner.m --> GK_normalization --> most_common_odd_bi_stable_finder.m --> Open the .xls file in Microsoft Excel and plot it`
+
+# Figure 7: [sRACIPE -- Yet to be done] 

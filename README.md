@@ -217,45 +217,45 @@ This performs the plotting of the relative stability of the different monostable
 
 ---
 ---
-## Pipelines used 
+# Pipelines used 
 
 
-# Figure 2: Even numbered networks 
+## Figure 2: Even numbered networks 
 
 `RACIPE --> allSolutionFileCombiner.m --> GK_normalization --> make_and_errorbar_conditions_apply --> Choose top 5/6 dominant states in Microsoft Excel and plot the bar-chart `
 
 `(RACIPE --> allSolutionFileCombiner.m --> GK_normalization --> make_and_errorbar_conditions_apply) + Boolean solution file --> CombinedcsvGen.m --> JSD-operation.ipynb --> JSD values `
 
 
-# Figure 3: A and B
+## Figure 3: A and B
 
 `RACIPE --> GK_normalization --> MakeStabilityStateCounter.m --> Plot the data in Microsoft Excel and plot the bar-chart `
 
-# Figure 3: C
+## Figure 3: C
 
 `RACIPE --> allSolutionFileCombiner.m --> GK_normalization --> make_and_errorbar_conditions_apply --> Choose top 3 most dominant states in Microsoft Excel and plot the stacked bar-chart. `
 
 
-# Figure 4
+## Figure 4
 
 `RACIPE --> parameter and solution files ---> odecode_relative_stability_<circuit component number>.m --> rel_stability_hist_plotting.m` 
 
 The function `rel_stability_his_plotting.m` prints the percentage of the bistable solutions, which fall inside the [0,0.045)U(0.965,1.00] range (i.e. the effective monostable solutions). Those can be copy pasted inside an Excel Sheet and then used to plot the bar-chart of *Fig. 4-D* 
 
-# Figure 5: Odd numbered networks 
+## Figure 5: Odd numbered networks 
 
 `RACIPE --> allSolutionFileCombiner.m --> GK_normalization --> make_and_errorbar_conditions_apply --> Choose top 5/6 dominant states in Microsoft Excel and plot the bar-chart `
 
 `(RACIPE --> allSolutionFileCombiner.m --> GK_normalization --> make_and_errorbar_conditions_apply) + Boolean solution file --> CombinedcsvGen.m --> JSD-operation.ipynb --> JSD values `
 
-# Figure 6: A
+## Figure 6: A
 
 `RACIPE --> GK_normalization --> MakeStabilityStateCounter.m --> Plot the data in Microsoft Excel and plot the bar-chart `
 
-# Figure 6: B and C
+## Figure 6: B and C
 
 `RACIPE --> allSolutionFileCombiner.m --> GK_normalization --> most_common_odd_mono_stable_finder.m --> Open the .xls file in Microsoft Excel and plot it`
 
 `RACIPE --> allSolutionFileCombiner.m --> GK_normalization --> most_common_odd_bi_stable_finder.m --> Open the .xls file in Microsoft Excel and plot it`
 
-# Figure 7: [sRACIPE -- Yet to be done] 
+## Figure 7: [sRACIPE -- Yet to be done] 

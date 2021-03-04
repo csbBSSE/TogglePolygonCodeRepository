@@ -18,7 +18,7 @@ Once the triplicates of the RACIPE simulations are done, we use the following pi
 ## Boolean Simulations [Link is still missing]
 For Boolean analysis, network topology is given as the input file that mentions the nodes and edges of the network. The edges can be of two types, activating and inhibiting. The analysis was carried out by the asynchronous update of the nodes, i.e. one node is chosen randomly and updated in a given timestep. The constraint of equal weightage to inhibitory and activating links was used. The updating of the nodes follows a simple majority rule. The node is updated to 1 if the sum of activations to the node is higher than inhibitions and updated to 0 for the opposite case. The steady state is said to be reached if there is no change in the updates for a predefined number of time-steps. We have run the simulations for 10000 random initial conditions for a given network.
 
-## sRACIPE Simulations []
+## sRACIPE Simulations [Link is not working !!!]
 We performed sRACIPE simulations on toggle square and toggle pentagon to generate a set of random parameter sets and simulated the system with a fixed amount of noise in one of the parameters. We used the webserver facility of Gene Circuit Explorer (GeneEx) to simulate stochastic dynamics of gene regulatory circuits: [link](https://shinyapps.jax.org/5c965c4b284ca029b4aa98483f3da3c5/ "sRACIPE")
 
 # Code definitions: 

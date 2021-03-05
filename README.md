@@ -266,5 +266,5 @@ The function `rel_stability_his_plotting.m` prints the percentage of the bistabl
 
 `RACIPE --> allSolutionFileCombiner.m --> GK_normalization --> most_common_odd_bi_stable_finder.m --> Open the .xls file in Microsoft Excel and plot it`
 
-## Figure 7:
+## Figure 8:
 Refer to the sRACIPE section. 

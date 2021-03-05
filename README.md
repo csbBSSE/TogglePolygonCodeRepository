@@ -24,7 +24,7 @@ We performed RACIPE simulations on toggle square and toggle pentagon to generate
 # Code definitions: 
 
 **G/K Normalization:**  
-filename: `GK_normalization.md`
+filename: `GK_normalization.m`
 
 This code performs G/K normalization on all the RACIPE solution files present in the Given directory and writes the output in the `*_solutions_gk_?.dat` files in the same directory. [`*` and `?` denote their standard meaning as that of UNIX command line.]
 

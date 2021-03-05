@@ -228,7 +228,9 @@ This performs the plotting of the relative stability of the different monostable
 
 `RACIPE --> allSolutionFileCombiner.m --> GK_normalization --> make_and_errorbar_conditions_apply --> Choose top 5/6 dominant states in Microsoft Excel and plot the bar-chart `
 
-`(RACIPE --> allSolutionFileCombiner.m --> GK_normalization --> make_and_errorbar_conditions_apply) + Boolean solution file --> CombinedcsvGen.m --> JSD-operation.ipynb --> JSD values `
+`RACIPE --> allSolutionFileCombiner.m --> GK_normalization --> make_and_errorbar_conditions_apply --> A`
+`Boolean solution file --> B`
+`A + B -->CombinedcsvGen.m --> JSD-operation.ipynb --> JSD values `
 
 
 ## Figure 3: A and B

@@ -13,7 +13,7 @@ Additinal flags were used in special conditions, for those details, refer to "Me
 
 Once the triplicates of the RACIPE simulations are done, we use the following pipelines to analyze the data in different ways.
 
-**Important**: Keep all the triplicates of the RACIPE solutions for a same network in the same directory (preferebly, name the directory as the name of the network). For example Make a directory `/home/user1/4c` and keep the replicate one inside the the folder as `/home/user1/4c/1` and same for replicate two and three. 
+**Important**: Keep all the triplicates of the RACIPE solutions for a same network in the same directory (preferebly, name the directory as the name of the network). For example Make a directory `/home/user1/4c` and keep the replicate one inside the folder as `/home/user1/4c/1` and same for replicate two and three. 
 
 ## Boolean Simulations [Link is still missing]
 For Boolean analysis, network topology is given as the input file that mentions the nodes and edges of the network. The edges can be of two types, activating and inhibiting. The analysis was carried out by the asynchronous update of the nodes, i.e. one node is chosen randomly and updated in a given timestep. The constraint of equal weightage to inhibitory and activating links was used. The updating of the nodes follows a simple majority rule. The node is updated to 1 if the sum of activations to the node is higher than inhibitions and updated to 0 for the opposite case. The steady state is said to be reached if there is no change in the updates for a predefined number of time-steps. We have run the simulations for 10000 random initial conditions for a given network.
@@ -111,7 +111,7 @@ filenames:
    Main Function: `most_common_odd_mono_state_finder.m`
    Helper Function: `err_bar_maker.m`
 
-Main Function: ONLY WORKS WITH ODD-NUMBERED TOGGLE POLYGON NETWORKS. It reads all the monostable solution files from each of the triplicates of the RACIPE simulations and make a .xls file that states the relative frequency of the all the dominant monostable states compared to the rest of the states in the monostable solution.
+Main Function: ONLY WORKS WITH ODD-NUMBERED TOGGLE POLYGON NETWORKS. It reads all the monostable solution files from each of the triplicates of the RACIPE simulations and make a .xls file that states the relative frequency of all the dominant monostable states compared to the rest of the states in the monostable solution.
 
 inputs: 
 
@@ -180,8 +180,8 @@ The general pattern is like:
 
 filename: `dynamic_simulation_<circuit name>.m`
 
-These functions are primarily there to build the coupled shifted Hill function required to solve the networks in MATLAB and those results can be plotted to find out the presence of any oscillations and also to find out the relative stability of the individual states in a multi-stable solution (our primary focus in this article was on the relative stable of the corresponding monostable states in the most dominant bistable solution(s)).
-   Hence, the right function (i.e. the function corresponding the the right networks, that the user wants the analyze) must be used while doing relative stability analysis or just plotting the results to search for oscillations.
+These functions are primarily there to build the coupled shifted Hill function required to solve the networks in MATLAB and those results can be plotted to find out the presence of any oscillations and also to find out the relative stability of the individual states in a multi-stable solution (our primary focus in this article was on the relative stability of the corresponding monostable states in the most dominant bistable solution(s)).
+   Hence, the right function (i.e. the function corresponding the right networks, that the user wants to analyze) must be used while doing relative stability analysis or just plotting the results to search for oscillations.
 
 filename: `odecode_relative_stability_<circuit component number>.m`
 
@@ -196,7 +196,7 @@ variables to change:
 5. `run_time`: `run_time = 0:1:200` generally is enough for the solutions to reach convergence in all the cases, but it can be modified by the end-user as per the need 
 6. `num_initials`: This number indicates how many random initial conditions to generate for this simulations, we have used 1000 initial conditions for all our analysis. 
 
-Now, how exactly the data should be retrieved in the ouput is the choice of the user. I have given four examples, in my Code repository, where in `odecode_relative_stability_4.m` I collected the values of a,b,c,d separately and then chose the solutions where A=1,B=0,C=1,D=0 as state 11 and and where A=0,B=1,C=0,D=1 as state 6 for the relative stability plotting. But, for `odecode_relative_stability_2.m, odecode_relative_stability_5.m, odecode_relative_stability_7.m` I wrote the definition of the states inside the code and just stored how many initial conditions converged to which state in each run. 
+Now, how exactly the data should be retrieved in the ouput is the choice of the user. I have given four examples, in my Code repository, where in `odecode_relative_stability_4.m` I collected the values of a,b,c,d separately and then chose the solutions where A=1,B=0,C=1,D=0 as state 11 and where A=0,B=1,C=0,D=1 as state 6 for the relative stability plotting. But, for `odecode_relative_stability_2.m, odecode_relative_stability_5.m, odecode_relative_stability_7.m` I wrote the definition of the states inside the code and just stored how many initial conditions converged to which state in each run. 
 
 _I sincerely urge the user to go through `odecode_relative_stability_<circuit component number>.m` files carefully and understand these (the user can neglect the more complicated helpfer functions used inside this code, as that part remains same in all the analysis. The user must tune his results as per his requirements to get the output in a mode that will be easier for him to analyze later.)_
 
@@ -266,4 +266,5 @@ The function `rel_stability_his_plotting.m` prints the percentage of the bistabl
 
 `RACIPE --> allSolutionFileCombiner.m --> GK_normalization --> most_common_odd_bi_stable_finder.m --> Open the .xls file in Microsoft Excel and plot it`
 
-## Figure 7: [sRACIPE -- Yet to be done] 
+## Figure 7:
+Refer to the sRACIPE section. 

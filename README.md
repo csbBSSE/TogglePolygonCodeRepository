@@ -18,8 +18,8 @@ Once the triplicates of the RACIPE simulations are done, we use the following pi
 ## Boolean Simulations [Link is still missing]
 For Boolean analysis, network topology is given as the input file that mentions the nodes and edges of the network. The edges can be of two types, activating and inhibiting. The analysis was carried out by the asynchronous update of the nodes, i.e. one node is chosen randomly and updated in a given timestep. The constraint of equal weightage to inhibitory and activating links was used. The updating of the nodes follows a simple majority rule. The node is updated to 1 if the sum of activations to the node is higher than inhibitions and updated to 0 for the opposite case. The steady state is said to be reached if there is no change in the updates for a predefined number of time-steps. We have run the simulations for 10000 random initial conditions for a given network.
 
-## sRACIPE Simulations [update the Methods section in the manuscript and then copy-paste from there.]
-We performed sRACIPE simulations on toggle square and toggle pentagon to generate a set of random parameter sets and simulated the system with a fixed amount of noise in one of the parameters. We used the webserver facility of Gene Circuit Explorer (GeneEx) to simulate stochastic dynamics of gene regulatory circuits: [link](https://geneex.jax.org/ "sRACIPE")
+## sRACIPE Simulations
+We performed RACIPE simulations on toggle square and toggle pentagon to generate a set of random parameter sets and simulated the system with a fixed amount of noise in one of the parameters using sRACIPE. We used the webserver facility of Gene Circuit Explorer (GeneEx) to simulate stochastic dynamics of gene regulatory circuits: [link](https://geneex.jax.org/ "sRACIPE")
 
 # Code definitions: 
 
@@ -198,7 +198,7 @@ variables to change:
 
 Now, how exactly the data should be retrieved in the ouput is the choice of the user. I have given four examples, in my Code repository, where in `odecode_relative_stability_4.m` I collected the values of a,b,c,d separately and then chose the solutions where A=1,B=0,C=1,D=0 as state 11 and where A=0,B=1,C=0,D=1 as state 6 for the relative stability plotting. But, for `odecode_relative_stability_2.m, odecode_relative_stability_5.m, odecode_relative_stability_7.m` I wrote the definition of the states inside the code and just stored how many initial conditions converged to which state in each run. 
 
-_I sincerely urge the user to go through `odecode_relative_stability_<circuit component number>.m` files carefully and understand these (the user can neglect the more complicated helpfer functions used inside this code, as that part remains same in all the analysis. The user must tune his results as per his requirements to get the output in a mode that will be easier for him to analyze later.)_
+_User should go through `odecode_relative_stability_<circuit component number>.m` files carefully and understand these (the more complicated helpfer functions used inside this code can be neglected, as that part remains same in all the analysis. The user must tune his results as per his requirements to get the output in a mode that will be easier for him to analyze later.)_
 
 ---
 

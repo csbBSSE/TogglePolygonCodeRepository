@@ -198,7 +198,7 @@ variables to change:
 
 Now, how exactly the data should be retrieved in the ouput is the choice of the user. I have given four examples, in my Code repository, where in `odecode_relative_stability_4.m` I collected the values of a,b,c,d separately and then chose the solutions where A=1,B=0,C=1,D=0 as state 11 and where A=0,B=1,C=0,D=1 as state 6 for the relative stability plotting. But, for `odecode_relative_stability_2.m, odecode_relative_stability_5.m, odecode_relative_stability_7.m` I wrote the definition of the states inside the code and just stored how many initial conditions converged to which state in each run. 
 
-_User should go through `odecode_relative_stability_<circuit component number>.m` files carefully and understand these (the more complicated helpfer functions used inside this code can be neglected, as that part remains same in all the analysis. The user must tune his results as per his requirements to get the output in a mode that will be easier for him to analyze later.)_
+_User should go through `odecode_relative_stability_<circuit component number>.m` files carefully and tune his results as per his requirements to get the output in a mode that will be easier for him to analyze later.)_
 
 ---
 

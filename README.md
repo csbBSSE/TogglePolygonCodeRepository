@@ -24,7 +24,7 @@ We performed RACIPE simulations on toggle square and toggle pentagon to generate
 # Code definitions: 
 
 **G/K Normalization:**  
-filename: `GK_normalization.md`
+filename: `GK_normalization.m`
 
 This code performs G/K normalization on all the RACIPE solution files present in the Given directory and writes the output in the `*_solutions_gk_?.dat` files in the same directory. [`*` and `?` denote their standard meaning as that of UNIX command line.]
 
@@ -198,7 +198,7 @@ variables to change:
 
 Now, how exactly the data should be retrieved in the ouput is the choice of the user. I have given four examples, in my Code repository, where in `odecode_relative_stability_4.m` I collected the values of a,b,c,d separately and then chose the solutions where A=1,B=0,C=1,D=0 as state 11 and where A=0,B=1,C=0,D=1 as state 6 for the relative stability plotting. But, for `odecode_relative_stability_2.m, odecode_relative_stability_5.m, odecode_relative_stability_7.m` I wrote the definition of the states inside the code and just stored how many initial conditions converged to which state in each run. 
 
-_User should go through `odecode_relative_stability_<circuit component number>.m` files carefully and understand these (the more complicated helpfer functions used inside this code can be neglected, as that part remains same in all the analysis. The user must tune his results as per his requirements to get the output in a mode that will be easier for him to analyze later.)_
+_User should go through `odecode_relative_stability_<circuit component number>.m` files and tune the output variables as requierd to get the output in a mode that will be easier to analyze later.)_
 
 ---
 

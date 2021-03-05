@@ -59,7 +59,7 @@ Example: `MakeStabilityStateCounter('path_to_RACIPE_simulations/5cS','5cS')`
 ---
 _For "larger" RACIPE solutions:_ e.g. `-num_stability 20` -->   `universal_stability_state_counter.m`
 
-*Here*, "larger" RACIPE solutions are defined as those simulations with `num_stability` > 10 (default). (Not to be confused with those RACIPE simulations where we used
+*Here*, "larger" RACIPE solutions are defined as those simulations with `num_stability` > 10 (default). 
 
 inputs:
 1. `p1`: path of the first replicate of the RACIPE simulation of the concerned network 

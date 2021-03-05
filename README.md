@@ -15,7 +15,7 @@ Once the triplicates of the RACIPE simulations are done, we use the following pi
 
 **Important**: Keep all the triplicates of the RACIPE solutions for a same network in the same directory (preferebly, name the directory as the name of the network). For example Make a directory `/home/user1/4c` and keep the replicate one inside the folder as `/home/user1/4c/1` and same for replicate two and three. 
 
-## Boolean Simulations [Link is still missing]
+## Boolean Simulations
 For Boolean analysis, network topology is given as the input file that mentions the nodes and edges of the network. The edges can be of two types, activating and inhibiting. The analysis was carried out by the asynchronous update of the nodes, i.e. one node is chosen randomly and updated in a given timestep. The constraint of equal weightage to inhibitory and activating links was used. The updating of the nodes follows a simple majority rule. The node is updated to 1 if the sum of activations to the node is higher than inhibitions and updated to 0 for the opposite case. The steady state is said to be reached if there is no change in the updates for a predefined number of time-steps. We have run the simulations for 10000 random initial conditions for a given network. For more information, visit this [link](https://github.com/ComplexityBiosystems/bmodel "Boolean")
 
 ## sRACIPE Simulations
